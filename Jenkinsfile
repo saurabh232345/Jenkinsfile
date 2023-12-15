@@ -1,28 +1,38 @@
-[200~pipeline {
-	agent {
-		label{
-				label "built-in"
-				customWorkspace "/data/pipeline"
+pipeline {
+
+		agent any 
 		
-		}
-	}
+		stages {
 	
-	stages {
-			stage ('one') {
+			stage ("stage-1") {
+		
 					steps {
-							 sh "echo 'Hello all' > dev.html"
+				
+							echo "hello all this is stage-1"
+				
 					}
 			}
 			
-			stage ('two') {
+			stage ("stage-2") {
+			
 					steps {
-					dir ('/data/pipeline/qa'){
-							 sh "echo 'Hello all' > qa.html"
-							 
-							 }
+					
+							echo "hello all this is stage-2"
+					
 					}
 			}
 			
+			stage ("stage-3") {
+			
+					steps {
+					
+							echo "hello all this is stage-3"
+					
+					}
+					
+				}
+			
+	
 	
 	}
 
